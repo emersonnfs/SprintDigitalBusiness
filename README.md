@@ -4,14 +4,21 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 
 ## Endpoints
 
-- Usuários
+- [Usuários](#usuários)
     - [Cadastrar](#cadastrar-usuário)
     - [Listar todos](#listar-usuários)
     - [Mostrar detalhes](#listar-usuário)
     - [Apagar](#apagar-usuário)
     - [Alterar](#atualizar-usuário)
-
+- Foto
+    - [Cadastrar]
+    - [Listar todos]
+    - [Mostrar detalhes]
+    - [Apagar]
+    - [Alterar]
 ---
+
+## Usuários
 ### Cadastrar Usuário
 
 `POST` /studit/api/usuario
