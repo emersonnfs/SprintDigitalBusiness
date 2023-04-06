@@ -10,7 +10,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
     - [Mostrar detalhes](#listar-usuário)
     - [Apagar](#apagar-usuário)
     - [Alterar](#atualizar-usuário)
-- Foto
+- [Foto]
     - [Cadastrar]
     - [Listar todos]
     - [Mostrar detalhes]
@@ -19,9 +19,6 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 ---
 
 ## Usuários
-### Cadastrar Usuário
-
-`POST` /studit/api/usuario
 
 | Campo | Tipo | Obrigatório | Descrição 
 |-------|------|-------------|-----------
@@ -30,6 +27,10 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 | senha | String | Sim | Aqui vai o senha do usuário
 | data | LocalDate | Não | Aqui vai a data de nascimento do usuário
 | foto | Foto | Não | Aqui vai a foto do perfil
+
+### Cadastrar Usuário
+
+`POST` /studit/api/usuario
 
 **Exemplo de corpo do request**
 
@@ -172,3 +173,6 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 | 400 | Erro na validação dos dados da requisição
 
 ---
+
+## Foto
+
