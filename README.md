@@ -9,7 +9,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
     - [Listar todos](#listar-usuários)
     - [Mostrar detalhes](#listar-usuário)
     - [Apagar](#apagar-usuário)
-    - [Alterar]
+    - [Alterar](#atualizar-usuário)
 
 ---
 ### Cadastrar Usuário
@@ -84,9 +84,10 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
         }
     }
 
+```
+
 **Códigos de Resposta**
 
-```
 | Código | Descrição
 |--------|-----------
 | 200 | Dados retornados no corpo da resposta
