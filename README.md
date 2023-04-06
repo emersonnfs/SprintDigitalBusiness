@@ -10,12 +10,12 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
     - [Mostrar detalhes](#listar-usuário)
     - [Apagar](#apagar-usuário)
     - [Alterar](#atualizar-usuário)
-- [Foto]
-    - [Cadastrar]
-    - [Listar todos]
-    - [Mostrar detalhes]
-    - [Apagar]
-    - [Alterar]
+- [Foto](#foto)
+    - [Cadastrar](#cadastrar-foto)
+    - [Listar todos](#listar-fotos)
+    - [Mostrar detalhes](#listar-foto)
+    - [Apagar](#apagar-foto)
+    - [Alterar](#atualizar-foto)
 ---
 
 ## Usuários
@@ -75,7 +75,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
                 "descricao": "Minha foto de perfil",
                 "tamanho": 1024,
                 "dataCriacao": "2023-04-06T10:00:00Z"
-            }
+            },
+            "id": "{id}"
         },
         {
             "nome": "Beltrano da Silva",
@@ -88,7 +89,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
                 "descricao": "Minha segunda foto de perfil",
                 "tamanho": 2048,
                 "dataCriacao": "2023-04-06T11:00:00Z"
-            }
+            },
+            "id": "{id}"
         }
     }
 
@@ -120,7 +122,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
             "descricao": "Minha foto de perfil",
             "tamanho": 1024,
             "dataCriacao": "2023-04-06T10:00:00Z"
-        }
+        },
+        "id": "{id}"
     }
 
 ```
@@ -160,7 +163,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
         "data": "1995-05-05",
         "foto": {
             "id": "1"
-        }
+        },
+        "id": "{id}"
     }
 
 ```
@@ -176,3 +180,135 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 
 ## Foto
 
+| Campo | Tipo | Obrigatório | Descrição 
+|-------|------|-------------|-----------
+| url | String | Sim | Aqui vai a url da foto
+| descricao | String | Sim | Aqui vai a descrição da foto
+| tamanhoBytes | int | Sim | Aqui vai o tamanho em bytes da foto
+| dataCriacao | LocalDateTime | Sim | Aqui vai a data criação da foto
+
+### Cadastrar Foto
+
+`POST` /studit/api/foto
+
+**Exemplo de corpo do request**
+
+```js
+
+    {
+        "url": "http://example.com/foto.jpg",
+        "descricao": "Minha foto de perfil",
+        "tamanho": 1024,
+        "dataCriacao": "2023-04-06T10:00:00Z"
+    }
+
+```
+
+**Códigos de Repsosta**
+
+| Código | Descrição
+|--------|-----------
+| 201 | Foto cadastrada com sucesso
+| 400 | Erro na validação dos dados da requisição
+
+---
+
+### Listar Fotos
+
+`GET` /studit/api/foto
+
+```js
+
+    {
+        {
+            "id": "1",
+            "url": "http://example.com/foto.jpg",
+            "descricao": "Minha foto de perfil",
+            "tamanho": 1024,
+            "dataCriacao": "2023-04-06T10:00:00Z",
+            "id": "{id}"
+        },
+        {
+            "id": "2",
+            "url": "http://example.com/foto2.jpg",
+            "descricao": "Minha segunda foto de perfil",
+            "tamanho": 2048,
+            "dataCriacao": "2023-04-06T11:00:00Z",
+            "id": "{id}"
+        }
+    }
+
+```
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 200 | Dados retornados no corpo da resposta
+| 404 | Dados não encontrado
+
+---
+
+### Listar Foto
+
+`GET` /studit/api/foto/{id}
+
+```js
+
+    {
+        "id": "1",
+        "url": "http://example.com/foto.jpg",
+        "descricao": "Minha foto de perfil",
+        "tamanho": 1024,
+        "dataCriacao": "2023-04-06T10:00:00Z",
+        "id": "{id}"
+    }
+
+```
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 200 | Dados retornados no corpo da resposta
+| 404 | Dados não encontrado
+
+---
+
+### Apagar Foto
+
+`DELETE` /studit/api/foto/{id}
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 202 | Foto apagada com sucesso
+| 404 | Foto não encontrado
+
+---
+
+### Atualizar Foto
+
+`PUT` /studit/api/foto/{id}
+
+```js
+
+    {
+        "url": "http://example.com/foto.jpg",
+        "descricao": "Minha foto de perfil atualizada",
+        "tamanho": 2048,
+        "dataCriacao": "2023-04-06T10:00:00Z",
+        "id": "{id}"
+    }
+
+```
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 201 | Foto atualizada com sucesso
+| 400 | Erro na validação dos dados da requisição
+
+---
