@@ -22,7 +22,12 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
     - [Mostrar detalhes](#listar-resumo)
     - [Apagar](#apagar-resumo)
     - [Alterar](#atualizar-resumo)
-
+- [Exercício](#exercício)
+    - [Cadastrar](#cadastrar-exercício)
+    - [Listar todos](#listar-exerícios)
+    - [Mostrar detalhes](#listar-exercício)
+    - [Apagar](#apagar-exercício)
+    - [Alterar](#atualizar-exercício)
 
 ---
 
@@ -171,8 +176,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
         "data": "1995-05-05",
         "foto": {
             "id": "1"
-        },
-        "id": "1"
+        }
     }
 
 ```
@@ -303,8 +307,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
         "url": "http://example.com/foto.jpg",
         "descricao": "Minha foto de perfil atualizada",
         "tamanho": 2048,
-        "dataCriacao": "2023-04-06T10:00:00Z",
-        "id": "1"
+        "dataCriacao": "2023-04-06T10:00:00Z"
     }
 
 ```
@@ -432,7 +435,6 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 ```js
 
     {
-        "id": 1,
         "titulo": "Título do resumo 1",
         "conteudo": "Novo conteúdo do resumo 1",
         "dataCriacao": "2023-04-07T10:00:00",
@@ -447,6 +449,187 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 | Código | Descrição
 |--------|-----------
 | 201 | Resumo atualizado com sucesso
+| 400 | Erro na validação dos dados da requisição
+
+---
+
+## Exercício
+
+| Campo | Tipo | Obrigatório | Descrição 
+|-------|------|-------------|-----------
+| pergunta | String | Sim | Aqui vai a pergunta do exercício
+| alternativaA | String | Sim | Aqui vai a Alternativa 'A' do exercício
+| alternativaB | String | Sim | Aqui vai a Alternativa 'B' do exercício
+| alternativaC | String | Sim | Aqui vai a Alternativa 'C' do exercício
+| alternativaD | String | Sim | Aqui vai a Alternativa 'D' do exercício
+| resposta | String | Sim | Aqui vai a resposta do exercício
+| resumo | Resumo | Não | Aqui vai o resumo do conteúdo do exercício
+| materia | Materia | Sim | Aqui vai a matéria do exercício
+
+### Cadastrar Exercício
+
+`POST` /studit/api/exercicio
+
+**Exemplo de corpo do request**
+
+```js
+
+    {
+        "pergunta": "Qual é a capital do Brasil?",
+        "alternativaA": "São Paulo",
+        "alternativaB": "Rio de Janeiro",
+        "alternativaC": "Brasília",
+        "alternativaD": "Belo Horizonte",
+        "resposta": "C",
+        "resumo": {
+            "id":"1"
+        },
+        "materia": "GEOGRAFIA"
+    }
+
+
+```
+
+**Códigos de Repsosta**
+
+| Código | Descrição
+|--------|-----------
+| 201 | Usuário cadastrada com sucesso
+| 400 | Erro na validação dos dados da requisição
+
+---
+
+### Listar Exerícios
+
+`GET` /studit/api/exercicio
+
+```js
+    {
+        {   
+            "id":"1",
+            "pergunta": "Qual é a capital do Brasil?",
+            "alternativaA": "São Paulo",
+            "alternativaB": "Rio de Janeiro",
+            "alternativaC": "Brasília",
+            "alternativaD": "Belo Horizonte",
+            "resposta": "C"
+            "resumo":{        
+                "id": 1,        
+                "titulo": "Título do resumo 1",        
+                "conteudo": "Conteúdo do resumo 1",        
+                "dataCriacao": "2023-04-07T10:00:00",        
+                "materia": "GEOGRAFIA"    
+            },
+            "materia": "GEOGRAFIA"
+        },
+        {
+            "id":"2",
+            "pergunta": "Qual é a fórmula da água?",
+            "alternativaA": "H2O",
+            "alternativaB": "CO2",
+            "alternativaC": "NO2",
+            "alternativaD": "NaCl",
+            "resposta": "A"
+            "resumo":{        
+                "id": 1,        
+                "titulo": "Título do resumo 1",        
+                "conteudo": "Conteúdo do resumo 1",        
+                "dataCriacao": "2023-04-07T10:00:00",        
+                "materia": "QUIMICA"    
+            },
+            "materia": "QUIMICA"
+        }
+    }
+
+```
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 200 | Dados retornados no corpo da resposta
+| 404 | Dados não encontrado
+
+---
+
+### Listar Exercício
+
+`GET` /studit/api/exercicio/{id}
+
+```js
+
+    {   
+        "id":"1",
+        "pergunta": "Qual é a capital do Brasil?",
+        "alternativaA": "São Paulo",
+        "alternativaB": "Rio de Janeiro",
+        "alternativaC": "Brasília",
+        "alternativaD": "Belo Horizonte",
+        "resposta": "C"
+        "resumo":{        
+            "id": 1,        
+            "titulo": "Título do resumo 1",        
+            "conteudo": "Conteúdo do resumo 1",        
+            "dataCriacao": "2023-04-07T10:00:00",        
+            "materia": "GEOGRAFIA"    
+        },
+        "materia": "GEOGRAFIA"
+    }
+
+```
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 200 | Dados retornados no corpo da resposta
+| 404 | Dados não encontrado
+
+---
+
+### Apagar Exercício
+
+`DELETE` /studit/api/exercicio/{id}
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 202 | Exercício apagado com sucesso
+| 404 | Exercício não encontrado
+
+---
+
+### Atualizar Exercício
+
+`PUT` /studit/api/exercicio/{id}
+```js
+
+    {   
+        "id":"1",
+        "pergunta": "Qual foi a primeira capital do Brasil?",
+        "alternativaA": "Salvador",
+        "alternativaB": "Rio de Janeiro",
+        "alternativaC": "Brasília",
+        "alternativaD": "Belo Horizonte",
+        "resposta": "A"
+        "resumo":{        
+            "id": 1,        
+            "titulo": "Título do resumo 1",        
+            "conteudo": "Conteúdo do resumo 1",        
+            "dataCriacao": "2023-04-07T10:00:00",        
+            "materia": "GEOGRAFIA"    
+        },
+        "materia": "GEOGRAFIA"
+    }
+
+```
+
+**Códigos de Resposta**
+
+| Código | Descrição
+|--------|-----------
+| 201 | Exercício atualizado com sucesso
 | 400 | Erro na validação dos dados da requisição
 
 ---
