@@ -28,7 +28,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
     - [Mostrar detalhes](#listar-exercício)
     - [Apagar](#apagar-exercício)
     - [Alterar](#atualizar-exercício)
-
+    
 ---
 
 ## Usuários
