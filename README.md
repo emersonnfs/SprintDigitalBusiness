@@ -195,7 +195,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 | Campo | Tipo | Obrigatório | Descrição 
 |-------|------|-------------|-----------
 | url | String | Sim | Aqui vai a url da foto
-| descricao | String | Sim | Aqui vai a descrição da foto
+| descricao | String | Não | Aqui vai a descrição da foto
 | tamanhoBytes | int | Sim | Aqui vai o tamanho em bytes da foto
 | dataCriacao | LocalDateTime | Sim | Aqui vai a data criação da foto
 
@@ -463,6 +463,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
 | alternativaC | String | Sim | Aqui vai a Alternativa 'C' do exercício
 | alternativaD | String | Sim | Aqui vai a Alternativa 'D' do exercício
 | resposta | String | Sim | Aqui vai a resposta do exercício
+| resolucao | Stirng | Sim | Aqui vai a solução do exercíco
 | resumo | Resumo | Não | Aqui vai o resumo do conteúdo do exercício
 | materia | Materia | Sim | Aqui vai a matéria do exercício
 
@@ -481,6 +482,7 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
         "alternativaC": "Brasília",
         "alternativaD": "Belo Horizonte",
         "resposta": "C",
+        "resolucao": "Em 1956, o então presidente Juscelino Kubitschek lançou o plano de construir uma nova capital para o Brasil, no centro do país, e em 21 de abril de 1960, Brasília foi oficialmente inaugurada como a nova capital do Brasil. A cidade foi projetada pelo arquiteto Oscar Niemeyer e pelo urbanista Lúcio Costa, e sua construção foi concluída em tempo recorde de apenas quatro anos. Desde então, Brasília tem sido a sede do governo federal e a capital do Brasil.",
         "resumo": {
             "id":"1"
         },
@@ -512,7 +514,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
             "alternativaB": "Rio de Janeiro",
             "alternativaC": "Brasília",
             "alternativaD": "Belo Horizonte",
-            "resposta": "C"
+            "resposta": "C",
+            "resolucao": "Em 1956, o então presidente Juscelino Kubitschek lançou o plano de construir uma nova capital para o Brasil, no centro do país, e em 21 de abril de 1960, Brasília foi oficialmente inaugurada como a nova capital do Brasil. A cidade foi projetada pelo arquiteto Oscar Niemeyer e pelo urbanista Lúcio Costa, e sua construção foi concluída em tempo recorde de apenas quatro anos. Desde então, Brasília tem sido a sede do governo federal e a capital do Brasil.",
             "resumo":{        
                 "id": 1,        
                 "titulo": "Título do resumo 1",        
@@ -529,7 +532,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
             "alternativaB": "CO2",
             "alternativaC": "NO2",
             "alternativaD": "NaCl",
-            "resposta": "A"
+            "resposta": "A",
+            "resolucao": "A fórmula da água é H2O, o que significa que uma molécula de água é composta por dois átomos de hidrogênio (H) e um átomo de oxigênio (O). Essa fórmula química representa a proporção dos átomos na molécula de água. A ligação química entre os átomos ocorre por meio de ligações covalentes, em que os átomos compartilham elétrons. A água é uma substância essencial para a vida, e suas propriedades únicas são devidas às ligações de hidrogênio entre as moléculas de água, que resultam em uma estrutura molecular tetraédrica e em propriedades como alta tensão superficial e ponto de fusão e ebulição elevados.",
             "resumo":{        
                 "id": 1,        
                 "titulo": "Título do resumo 1",        
@@ -565,7 +569,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
         "alternativaB": "Rio de Janeiro",
         "alternativaC": "Brasília",
         "alternativaD": "Belo Horizonte",
-        "resposta": "C"
+        "resposta": "C",
+        "resolucao": "Em 1956, o então presidente Juscelino Kubitschek lançou o plano de construir uma nova capital para o Brasil, no centro do país, e em 21 de abril de 1960, Brasília foi oficialmente inaugurada como a nova capital do Brasil. A cidade foi projetada pelo arquiteto Oscar Niemeyer e pelo urbanista Lúcio Costa, e sua construção foi concluída em tempo recorde de apenas quatro anos. Desde então, Brasília tem sido a sede do governo federal e a capital do Brasil.",
         "resumo":{        
             "id": 1,        
             "titulo": "Título do resumo 1",        
@@ -612,7 +617,8 @@ Uma api para o projeto StudIt onde geramos material de estudo para alunos de esc
         "alternativaB": "Rio de Janeiro",
         "alternativaC": "Brasília",
         "alternativaD": "Belo Horizonte",
-        "resposta": "A"
+        "resposta": "A",
+        "resolucao": "A primeira capital do Brasil foi a cidade de Salvador, localizada no estado da Bahia. Salvador foi fundada pelos portugueses em 1549, e se tornou a capital da colônia portuguesa no Brasil. Durante a época colonial, Salvador foi um importante centro administrativo, econômico e cultural, e sua influência pode ser vista até hoje na arquitetura, gastronomia e tradições da região. A capital do Brasil foi transferida para o Rio de Janeiro em 1763, durante o período colonial, e posteriormente para Brasília em 1960, após a construção da nova capital federal.",
         "resumo":{        
             "id": 1,        
             "titulo": "Título do resumo 1",        
